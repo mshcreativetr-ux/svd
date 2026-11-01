@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # رابط خريطة الموقع الرسمية
-Sitemap: https://emirates-safeguard.com/sitemap.xml
+Sitemap: https://moet-center.com/sitemap.xml
