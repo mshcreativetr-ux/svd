@@ -3,7 +3,7 @@ import { getRequest } from "@tanstack/react-start/server";
 import { z } from "zod";
 
 const APPS_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbyPqfqXNtSV__wkq00a8Lg38cyjVYbiCbTwE-U20Seg9bGm8YmHL0Z5aq9KISoYHATR/exec";
+"https://script.google.com/macros/s/AKfycbw6KXAa6bq8wyEmNwjgP-qPU1hCBDv-EI_XNjFE_OybqiyOP53T7mdj3ElPMzl0VYek/exec";
 const NAME_REGEX = /^[A-Za-z\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF\s'\-]+$/;
 const UAE_PHONE_REGEX = /^(?:\+9715\d{8}|05\d{8})$/;
 
@@ -115,7 +115,7 @@ async function getClientNetInfo(): Promise<{
 }
 
 export const submitComplaint = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => inputSchema.parse(data))
+ .validator((data: unknown) => inputSchema.parse(data))
   .handler(async ({ data }) => {
     const { device, browser, os } = parseUA(data.userAgent);
     
